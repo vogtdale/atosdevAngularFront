@@ -35,7 +35,7 @@ export class UserService {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
 
-  getEvents(): Observable<any> {
-    return this.http.get(url + 'events', httpOptions);
+  getListClients(): Observable<any> {
+    return this.http.get(url + 'ctc', { responseType: 'text' });
   }
 }

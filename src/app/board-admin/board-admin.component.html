@@ -1,1 +1,107 @@
-<p>board-admin works!</p>
+<div class="wrapper">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+      <div class="sidebar-header">
+          <h3>Atos logo</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+          <p>DashBoard Admin</p>
+          <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                  <li>
+                      <a href="#">Home 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">Clients</a>
+          </li>
+          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Besoin</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <li>
+                      <a href="#">Page 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">Collaborateur</a>
+          </li>
+          <li>
+              <a href="#">Proposition</a>
+          </li>
+      </ul>
+  </nav>
+
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+
+
+    </nav>
+
+    <div class="container-fluid">
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Date de creation</th>
+            <th scope="col">Client</th>
+            <th scope="col">Competence</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tel</th>
+            <th scope="col">Dernier Action</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let client of objectclient">
+
+          <tr>
+            <th scope="row" ></th>
+        <td>{{client.nom}} </td>
+            <td>{{client.poste}}</td>
+            <td>{{client.email}}</td>
+            <td>{{client.tel1}}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+  <button (click)="getdetailsClient()">click </button>
+    </div>
+
+</div>
