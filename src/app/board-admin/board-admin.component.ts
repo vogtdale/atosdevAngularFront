@@ -8,18 +8,18 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardAdminComponent implements OnInit {
 
-  objectclient: string;
+  object: string;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
+    this.getdetailsClient();
   }
 
 
   getdetailsClient() {
     return this.userService.getListClients().subscribe(
       data => {
-        this.objectclient = JSON.parse(data);
+        this.object = JSON.parse(data);
         console.log(data);
       },
       err => {

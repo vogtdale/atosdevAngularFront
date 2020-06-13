@@ -76,17 +76,19 @@
 
           </tr>
         </thead>
-        <tbody *ngFor="let client of objectclient">
+        <tbody>
 
-          <tr>
-            <th scope="row" ></th>
-        <td>{{client.nom}} </td>
-            <td>{{client.poste}}</td>
-            <td>{{client.email}}</td>
-            <td>{{client.tel1}}</td>
+          <tr *ngFor="let client of object">
+
+            <td>{{client.d_debut}}</td>
+            <td>{{client.site.lib}}</td>
+            <td>{{client.intitule}}</td>
+            <td>{{client.site.email}}</td>
+            <td>{{client.site.tel1}}</td>
+            <td>{{client.d_echeance}}</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
+            <th *ngFor="let client of object" scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
@@ -101,7 +103,6 @@
       </table>
 
   </div>
-  <button (click)="getdetailsClient()">click </button>
     </div>
 
 </div>
