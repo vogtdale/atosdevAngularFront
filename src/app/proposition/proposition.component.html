@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <app-sidebar></app-sidebar>
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <h1 align="center" >Proposition</h1>
+
+    <div class="container-fluid">
+
+      <table class="table table-bordered table-responsive">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Cree le </th>
+            <th scope="col">Collaborateur</th>
+            <th scope="col">Agence</th>
+            <th scope="col">Prix de vente</th>
+            <th scope="col">Prix d'achat</th>
+            <th scope="col">Marge</th>
+            <th scope="col">Relance</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let prop of Props">
+            <td>{{prop.d_pro}}</td>
+            <td>{{prop}}</td>
+            <td>{{prop}}</td>
+            <td>{{prop.prixVente}}</td>
+            <td>{{prop.prixAchat}}</td>
+            <td>{{prop.marge}}</td>
+            <td>{{prop.d_relance}}</td>
+            <td>{{prop.statut_prop.lib}}</td>
+            <td><button class="btn btn-primary">Edit</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+  </div>
+  </div>
+</div>
+
+
+

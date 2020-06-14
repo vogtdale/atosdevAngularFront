@@ -8,7 +8,7 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardAdminComponent implements OnInit {
 
-  object: string;
+  besoins: string;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class BoardAdminComponent implements OnInit {
   getdetailsClient() {
     return this.userService.getListClients().subscribe(
       data => {
-        this.object = JSON.parse(data);
+        this.besoins = JSON.parse(data);
         console.log(data);
       },
       err => {

@@ -12,6 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { BesoinComponent } from './besoin/besoin.component';
+import { PropositionComponent } from './proposition/proposition.component';
+import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +24,11 @@ import { NavigationComponent } from './navigation/navigation.component';
     HomeComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    NavigationComponent
+    NavigationComponent,
+    SidebarComponent,
+    BesoinComponent,
+    PropositionComponent,
+    CollaborateurComponent
   ],
   imports: [
     BrowserModule,

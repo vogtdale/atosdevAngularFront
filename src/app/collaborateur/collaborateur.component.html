@@ -1,8 +1,5 @@
 <div class="wrapper">
-
-  <!-- Sidebar -->
   <app-sidebar></app-sidebar>
-
   <div id="content">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -15,34 +12,37 @@
         </div>
     </nav>
 
-    <h1 align="center" >Liste Clients</h1>
+    <h1 align="center" >Liste Collaborateur</h1>
 
     <div class="container-fluid">
 
       <table class="table table-bordered table-responsive">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Date de creation</th>
-            <th scope="col">Client</th>
-            <th scope="col">Competence</th>
-            <th scope="col">Contact</th>
-            <th scope="col">Email</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Agence</th>
+            <th scope="col">Poste</th>
+            <th scope="col">Experience</th>
             <th scope="col">Tel</th>
-            <th scope="col">Dernier Action</th>
+            <th scope="col">Competence</th>
+            <th scope="col">Bench</th>
             <th scope="col">Action</th>
+
+
           </tr>
         </thead>
         <tbody>
 
-          <tr *ngFor="let besoin of besoins">
-
-            <td>{{besoin.besoin.d_debut}}</td>
-            <td>{{besoin.besoin.contactClient.nom}}</td>
-            <td>{{besoin.besoin.intitule}}</td>
-            <td>{{besoin.besoin.contactClient.nom}}</td>
-            <td>{{besoin.besoin.contactClient.email}}</td>
-            <td>{{besoin.besoin.contactClient.tel1}}</td>
-            <td>{{besoin.besoin.d_echeance}}</td>
+          <tr *ngFor="let collab of collabs">
+            <td>{{collab.collaborateur.nom}}</td>
+            <td>{{collab.collaborateur.prenom}}</td>
+            <td>{{collab.collaborateur.agence.lib}}</td>
+            <td>{{collab}}</td>
+            <td>{{collab.experience.lib}}</td>
+            <td>{{collab}}</td>
+            <td>{{collab.competence.lib}}</td>
+            <td>{{collab}}</td>
             <td><button class="btn btn-primary">Edit</button></td>
           </tr>
 
@@ -51,5 +51,7 @@
 
   </div>
   </div>
-
 </div>
+
+
+
