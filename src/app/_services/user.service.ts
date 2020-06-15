@@ -36,7 +36,7 @@ export class UserService {
   }
 
   getListClients(): Observable<any> {
-    return this.http.get(url + 'bsn_cpc', { responseType: 'text' });
+    return this.http.get(url + 'besoins', { responseType: 'text' });
   }
 
   getListBesoin(): Observable<any> {
@@ -48,6 +48,6 @@ export class UserService {
   }
 
   getAllCollaborateur(): Observable<any> {
-    return this.http.get(url + 'clb_cpc', { responseType: 'text' });
+    return this.http.get(url + 'clb', { responseType: 'text' });
   }
 }

@@ -15,34 +15,40 @@
     <h1 align="center" >Besoin</h1>
 
     <div class="container-fluid">
+      <div >
+        <input type="text" name="term" [(ngModel)]="term" [ngModelOptions]="{standalone: true}"
+        style="width:150px" placeholder="enter some text"
+        />
+
+      </div>
 
       <table class="table table-bordered table-responsive">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Date de creation</th>
-            <th scope="col">Client</th>
-            <th scope="col">Competence</th>
-            <th scope="col">Contact</th>
-            <th scope="col">Tel</th>
-            <th scope="col">Proposition</th>
-            <th scope="col">Echeance</th>
-            <th scope="col">Statut</th>
-            <th scope="col">Action</th>
+            <th class="col-xs">Date de creation</th>
+            <th class="col-xs">Client</th>
+            <th class="col-xs">Competence</th>
+            <th class="col-xs">Contact</th>
+            <th class="col-md">Tel</th>
+            <th class="col-xs">Proposition</th>
+            <th class="col-xs">Echeance</th>
+            <th class="col-xs">Statut</th>
+            <th class="col-xs">Action</th>
 
           </tr>
         </thead>
         <tbody>
 
-          <tr *ngFor="let besoin of besoins">
-            <td>{{besoin.d_debut}}</td>
-            <td>{{besoin.site.lib}}</td>
-            <td>{{besoin.intitule}}</td>
-            <td>{{besoin.contactClient.nom}}</td>
-            <td>{{besoin.contactClient.tel1}}</td>
-            <td></td>
-            <td>{{besoin.d_echeance}}</td>
-            <td>{{besoin.fCloture}}</td>
-            <td><button class="btn btn-primary">Edit</button></td>
+          <tr *ngFor="let besoin of besoins | filterbesoin:term">
+            <td class="col-xs">{{besoin.d_debut}}</td>
+            <td class="col-xs">{{besoin.site.clientSite.lib}}</td>
+            <td class="col-xs">{{besoin.intitule}}</td>
+            <td class="col-xs">{{besoin.contactClient.nom}}</td>
+            <td class="col-md">{{besoin.contactClient.tel1}}</td>
+            <td class="col-xs">{{besoin.site.clientSite.props.d_pro}}</td>
+            <td class="col-xs">{{besoin.d_echeance}}</td>
+            <td class="col-xs">{{besoin.site.clientSite.props.statut_prop.lib}}</td>
+            <td class="col-xs"><button class="btn btn-primary">Edit</button></td>
 
 
           </tr>

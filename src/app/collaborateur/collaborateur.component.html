@@ -35,13 +35,13 @@
         <tbody>
 
           <tr *ngFor="let collab of collabs">
-            <td>{{collab.collaborateur.nom}}</td>
-            <td>{{collab.collaborateur.prenom}}</td>
-            <td>{{collab.collaborateur.agence.lib}}</td>
+            <td>{{collab.nom}}</td>
+            <td>{{collab.prenom}}</td>
+            <td>{{collab.agence.lib}}</td>
             <td>{{collab}}</td>
-            <td>{{collab.experience.lib}}</td>
+            <td>{{collab.listeCollaborateurCompetence.experience}}</td>
             <td>{{collab}}</td>
-            <td>{{collab.competence.lib}}</td>
+            <td></td>
             <td>{{collab}}</td>
             <td><button class="btn btn-primary">Edit</button></td>
           </tr>

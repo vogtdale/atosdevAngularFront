@@ -16,6 +16,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BesoinComponent } from './besoin/besoin.component';
 import { PropositionComponent } from './proposition/proposition.component';
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
+import { FilterbesoinPipe } from './filterbesoin.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { CollaborateurComponent } from './collaborateur/collaborateur.component'
     SidebarComponent,
     BesoinComponent,
     PropositionComponent,
-    CollaborateurComponent
+    CollaborateurComponent,
+    FilterbesoinPipe
   ],
   imports: [
     BrowserModule,
