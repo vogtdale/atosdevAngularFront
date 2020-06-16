@@ -19,31 +19,31 @@
       <table class="table table-bordered table-responsive">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Nom</th>
-            <th scope="col">Prenom</th>
-            <th scope="col">Agence</th>
-            <th scope="col">Poste</th>
-            <th scope="col">Experience</th>
-            <th scope="col">Tel</th>
-            <th scope="col">Competence</th>
-            <th scope="col">Bench</th>
-            <th scope="col">Action</th>
+            <th class="col">Nom</th>
+            <th class="col">Prenom</th>
+            <th class="col">Agence</th>
+            <th class="col">Identifiant</th>
+            <th class="col">Experience</th>
+            <th class="col">Tel</th>
+            <th class="col">Competence</th>
+            <th class="col">Bench</th>
+            <th class="col">Action</th>
 
 
           </tr>
         </thead>
         <tbody>
 
-          <tr *ngFor="let collab of collabs">
-            <td>{{collab.nom}}</td>
-            <td>{{collab.prenom}}</td>
-            <td>{{collab.agence.lib}}</td>
-            <td>{{collab}}</td>
-            <td>{{collab.listeCollaborateurCompetence.experience}}</td>
-            <td>{{collab}}</td>
-            <td></td>
-            <td>{{collab}}</td>
-            <td><button class="btn btn-primary">Edit</button></td>
+          <tr  *ngFor="let collab of collabs">
+            <td class="col">{{collab.nom}}</td>
+            <td class="col">{{collab.prenom}}</td>
+            <td class="col">{{collab.agence.lib}}</td>
+            <td class="col">{{collab.Identifiant_Dass}}</td>
+            <td class="col">{{collab.listeCollaborateurCompetence[0].experience.lib}}</td>
+            <td class="col">{{collab}}</td>
+            <td class="col">{{collab.listeCollaborateurCompetence[0].competence.lib}}</td>
+            <td class="col">{{collab.bench}}</td>
+            <td class="col-"><button class="btn btn-primary">Edit</button></td>
           </tr>
 
         </tbody>
