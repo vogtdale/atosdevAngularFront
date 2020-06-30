@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 const API_URL = 'https://atosdevbackend.herokuapp.com/api/test/';
 const url = 'https://atosdevbackend.herokuapp.com/';
+
 const auth = sessionStorage.getItem('TOKEN_KEY');
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,6 +17,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
+  private baseUrl = 'https://atosdevbackend.herokuapp.com/clb';
+  private delUrl = 'https://atosdevbackend.herokuapp.com/delclb';
+  private bsnUrl = 'https://atosdevbackend.herokuapp.com/besoins';
 
   constructor(private http: HttpClient) { }
 
@@ -39,8 +43,17 @@ export class UserService {
     return this.http.get(url + 'besoins', { responseType: 'text' });
   }
 
+  // Crud Besoins Clients
   getListBesoin(): Observable<any> {
     return this.http.get(url + 'besoins', { responseType: 'text' });
+  }
+
+  delbesoinById(id: number): Observable<any> {
+    return this.http.delete(`${this.bsnUrl}/${id}`, {responseType: 'text'});
+  }
+
+  addBesoin(besoin): Observable<any> {
+    return this.http.put(url + 'addBesoin', besoin, {responseType: 'text'});
   }
 
   getAllPropositions(): Observable<any> {
@@ -50,4 +63,22 @@ export class UserService {
   getAllCollaborateur(): Observable<any> {
     return this.http.get(url + 'clb', { responseType: 'text' });
   }
+
+  getListeContact(): Observable<any> {
+    return this.http.get(url + 'ctc', {responseType: 'text'});
+  }
+
+
+  findCollabById(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`, {responseType: 'text'});
+  }
+
+  delCollabById(id: number): Observable<any> {
+    return this.http.delete(`${this.delUrl}/${id}`, {responseType: 'text'});
+  }
+
+  addCollab(collab): Observable<any> {
+    return this.http.put(url + 'addclb', collab, {responseType: 'text'});
+  }
+
 }

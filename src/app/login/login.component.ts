@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,12 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   user: string[] = [];
 
-  constructor(private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(
+    private router: Router,
+    private notificationService: NotificationService,
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
+    ) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -37,8 +43,9 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.user = this.tokenStorage.getUser().username;
-
+        this.notificationService.success(':: Successfully logged in');
         this.reloadPage();
+
       },
       err => {
         this.errorMessage = err.error.message;
@@ -48,7 +55,12 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-    window.location.reload();
+    // tslint:disable-next-line: only-arrow-functions
+    setTimeout(function() {
+      window.location.reload();
+    }, 2000);
+    this.router.navigate(['admin']);
+
   }
 
 }

@@ -1,10 +1,13 @@
 export class Besoin {
-  id: number;
-  debut: string;
+
+  // tslint:disable-next-line: variable-name
+  d_debut: string;
   intitule: string;
-  echeance: string;
-  site: string;
-  client: string;
+  // tslint:disable-next-line: variable-name
+  d_echeance: string;
+  ts: Date;
   remarque: string;
+  fCloture: boolean;
+  fRecurent: boolean;
 
 }

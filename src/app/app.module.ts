@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { authInterceptorProviders } from './_helpers/auth_interceptor';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +17,25 @@ import { BesoinComponent } from './besoin/besoin.component';
 import { PropositionComponent } from './proposition/proposition.component';
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { FilterbesoinPipe } from './filterbesoin.pipe';
+import { AjouterContactComponent } from './ajouter-contact/ajouter-contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {
+  MatButtonModule,
+  MatPaginatorModule,
+  MatSortModule, MatInputModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  MatCardModule,
+  MatToolbarModule
+} from '@angular/material';
+import {MatTableExporterModule} from 'mat-table-exporter';
+import { AddCollabComponent } from './add-collab/add-collab.component';
+import { EditCollabComponent } from './edit-collab/edit-collab.component';
+import { NotificationService } from './_services/notification.service';
+import { AddBesoinComponent } from './add-besoin/add-besoin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,15 +49,34 @@ import { FilterbesoinPipe } from './filterbesoin.pipe';
     BesoinComponent,
     PropositionComponent,
     CollaborateurComponent,
-    FilterbesoinPipe
+    FilterbesoinPipe,
+    AjouterContactComponent,
+    AddCollabComponent,
+    EditCollabComponent,
+    AddBesoinComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatInputModule,
+    MatTableExporterModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatToolbarModule
+
   ],
-  providers: [authInterceptorProviders],
-  bootstrap: [AppComponent]
+  providers: [authInterceptorProviders, NotificationService],
+  bootstrap: [AppComponent],
+  entryComponents: [AddCollabComponent, EditCollabComponent, AddBesoinComponent]
 })
 export class AppModule { }
