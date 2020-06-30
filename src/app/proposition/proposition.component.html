@@ -32,9 +32,9 @@
           <mat-icon>add</mat-icon>Ajouter
         </button>
         &nbsp;&nbsp;<button mat-raised-button
-          (click)="exporter.exportTable('xlsx', {filename: 'collaborateur'})">Excel</button>
+          (click)="exporter.exportTable('xlsx')">Excel</button>
         &nbsp;&nbsp;<button mat-raised-button
-          (click)="exporter.exportTable('csv', {filename: 'collaborateur'})">Csv</button>
+          (click)="exporter.exportTable('csv')">Csv</button>
         <!-- paginator -->
         <mat-paginator id="pager" [pageSizeOptions]="[5,10,15,25,50]" [pageSize]="10"></mat-paginator>
 
